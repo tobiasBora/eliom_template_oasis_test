@@ -1,0 +1,12 @@
+# OASIS_START
+# DO NOT EDIT (digest: 85c03985a7e78ae8f212f43a689d2103)
+version = "1.0"
+description = "My first (working ?) oasis template"
+requires = "eliom.server"
+archive(byte) = "mylib.cma"
+archive(byte, plugin) = "mylib.cma"
+archive(native) = "mylib.cmxa"
+archive(native, plugin) = "mylib.cmxs"
+exists_if = "mylib.cma"
+# OASIS_STOP
+

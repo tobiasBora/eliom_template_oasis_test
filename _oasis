@@ -1,0 +1,28 @@
+OASISFormat: 0.4
+Name:        oas2
+Version:     1.0
+Synopsis:    My first (working ?) oasis template
+Authors:     Tobias Bora
+License:     MIT
+Plugins:     DevFiles (0.4), META (0.4)
+AlphaFeatures: ocamlbuild_more_args, compiled_setup_ml
+BuildTools: ocamlbuild
+XOCamlbuildPluginTags: package(eliom.ocamlbuild)
+OCamlVersion: >= 4.01
+
+
+Library mylib
+  Path:       src/mylib
+  BuildTools: ocamlbuild
+  Modules:    Mylib
+  BuildDepends:
+    eliom.server
+
+Executable myprog
+  Install: false # We usally don't want to install the .byte
+  Path:       src/client
+  BuildTools: ocamlbuild
+  MainIs:     myprog.ml
+  BuildDepends:
+    eliom.client
+  CompiledObject: byte # because a js executable only needs the bytecode
